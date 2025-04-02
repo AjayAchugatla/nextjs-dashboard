@@ -1,8 +1,7 @@
 import Table from '@/app/ui/customers/table';
-import { fetchCustomers } from '@/app/lib/data';
+import { fetchFilteredCustomers } from '@/app/lib/data';
 
 export default async function Page() {
-    const customers = await fetchCustomers()
-    //@ts-ignore
+    const customers = await fetchFilteredCustomers("")
     return <Table customers={customers} />
 }
